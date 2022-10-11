@@ -1,7 +1,7 @@
 package com.example.shopspring.product;
 
 
-import com.example.shopspring.Shop.ShopService;
+import com.example.shopspring.shop.ShopService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

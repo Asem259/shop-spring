@@ -1,6 +1,6 @@
-package com.example.shopspring.Shop;
+package com.example.shopspring.shop;
 
-import com.example.shopspring.Exception.ItemNotFound;
+import com.example.shopspring.exception.ItemNotFound;
 import com.example.shopspring.order.Order;
 import com.example.shopspring.order.OrderRepo;
 import com.example.shopspring.product.Product;
@@ -31,6 +31,7 @@ public class ShopService {
     }
 
     public void addOrder(int orderId, List<Integer> productIds) {
+
         List<Product> products = new ArrayList<>();
         for (int productId : productIds) {
             Product product = productRepo.getProduct(productId);
@@ -38,6 +39,7 @@ public class ShopService {
         }
 
         Order order = new Order(orderId, products);
+
         orderRepo.addOrder(order);
     }
 
@@ -52,8 +54,7 @@ public class ShopService {
     public void deleteOrder(int id) {
         try {
             orderRepo.removeOrder(id);
-        }
-        catch (ItemNotFound e){
+        } catch (ItemNotFound e) {
             System.out.println(e.getMessage());
         }
     }

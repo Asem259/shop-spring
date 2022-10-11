@@ -1,11 +1,8 @@
 package com.example.shopspring.order;
 
-import com.example.shopspring.Shop.ShopService;
-import com.example.shopspring.product.Product;
+import com.example.shopspring.shop.ShopService;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
-import java.util.Objects;
 import java.util.Random;
 
 @RestController

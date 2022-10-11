@@ -1,6 +1,6 @@
 package com.example.shopspring.order;
 
-import com.example.shopspring.Exception.ItemNotFound;
+import com.example.shopspring.exception.ItemNotFound;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -26,7 +26,9 @@ public class OrderRepo {
         return new ArrayList<>(orders.values());
     }
 
-    public void removeOrder(int id) throws ItemNotFound {
+    public void removeOrder(int id) {
         orders.remove(id);
+        throw new ItemNotFound();
+
     }
 }
