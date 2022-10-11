@@ -1,5 +1,6 @@
 package com.example.shopspring.Shop;
 
+import com.example.shopspring.Exception.ItemNotFound;
 import com.example.shopspring.order.Order;
 import com.example.shopspring.order.OrderRepo;
 import com.example.shopspring.product.Product;
@@ -49,6 +50,11 @@ public class ShopService {
     }
 
     public void deleteOrder(int id) {
-        return orderRepo.de();
+        try {
+            orderRepo.removeOrder(id);
+        }
+        catch (ItemNotFound e){
+            System.out.println(e.getMessage());
+        }
     }
 }
